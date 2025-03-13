@@ -6,7 +6,7 @@
 /*   By: jimmy <jimmy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 23:18:05 by jimmy             #+#    #+#             */
-/*   Updated: 2025/03/14 00:06:22 by jimmy            ###   ########.fr       */
+/*   Updated: 2025/03/14 00:17:40 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ typename MutantStack<T>::iterator	MutantStack<T>::end()
 template <typename T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::begin() const
 {
-	return std::stack<T>::c.begin();
+	return std::stack<T>::c.cbegin();
 }
 
 template <typename T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::end() const
 {
-	return std::stack<T>::c.end();
+	return std::stack<T>::c.cend();
 }
 
 
@@ -104,11 +104,11 @@ typename MutantStack<T>::reverse_iterator	MutantStack<T>::rend()
 template <typename T>
 typename MutantStack<T>::const_reverse_iterator	MutantStack<T>::rbegin() const
 {
-	return std::stack<T>::c.rbegin();
+	return std::stack<T>::c.crbegin();
 }
 
 template <typename T>
 typename MutantStack<T>::const_reverse_iterator	MutantStack<T>::rend() const
 {
-	return std::stack<T>::c.rend();
+	return std::stack<T>::c.crend();
 }
