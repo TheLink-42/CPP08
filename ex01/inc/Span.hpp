@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jimmy <jimmy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:44:29 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2025/03/13 13:53:31 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2025/03/13 18:45:10 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,23 @@
 
 # include <vector>
 # include <exception>
+# include <algorithm>
 
 class Span
 {
 	private:
-		unsigned int	_size;
-		std::vecor<int>	_vector;
+		std::vector<int>	_vector;
+		unsigned int		_size;
 
 	public:
 		Span();
 		Span(unsigned int size);
 		~Span();
 		Span(const Span& other);
-		Span& operator=(Const Span& other);
+		Span& operator=(const Span& other);
 
 		void	addNumber(int value);
-		void	addManyNumber();
+		void	addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int		shortestSpan() const;
 		int		longestSpan() const;
 
@@ -39,7 +40,7 @@ class Span
 			public:
 				virtual const char* what() const throw();
 		};
-		class	NoNumbersStoredException: public std::exception
+		class	NotEnoughNumbersStoredException: public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
